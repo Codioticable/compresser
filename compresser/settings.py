@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$f^2n)(n+-*8ig@btzrx#3dnn91&334_-fbk(ap*a=7r)a!un-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['compresser-oo9r.onrender.com']
 
 
 # Application definition
@@ -121,4 +121,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
