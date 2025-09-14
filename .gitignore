@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+
+# Django stuff
+*.sqlite3
+db.sqlite3
+staticfiles/
+media/
+*.log
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Render / deployment artifacts
+*.coverage
+.pytest_cache/
+.mypy_cache/
+
+# Environment variables / secrets
+.env
+*.env
