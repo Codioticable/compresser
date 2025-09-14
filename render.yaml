@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: compresser-web
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn compresser.wsgi"
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      # If you add a database on Render, you can configure it like this:
+      # - key: DATABASE_URL
+      #   fromDatabase:
+      #     name: compresser-db
+      #     property: connectionString
