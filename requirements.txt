@@ -4,3 +4,6 @@ whitenoise>=6.6.0
 psycopg2-binary>=2.9.9
 dj-database-url>=2.1.0
 fitz
+Pillow>=10.0.0
+django-compressor>=4.0
+python-dotenv>=1.0.0
