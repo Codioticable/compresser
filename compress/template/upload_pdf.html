@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Compressor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff6b6b;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            padding: 12px;
+            background-color: #fce38a;
+            border: 2px solid #ff8c94;
+            border-radius: 6px;
+            width: 100%;
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        button {
+            background-color: #6a82fb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a1c4fd;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #6a82fb;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            input[type="file"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload PDF to Compress</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+          
+            <input type="file" name="pdf" accept="application/pdf" required><br>
+            <button type="submit">Compress PDF</button>
+        </form>
+
+            {% if compressed_pdf_url %}
+            <a href="{{ compressed_pdf_url }}" download>Download Compressed PDF</a>
+            {% endif %}
+        
+    </div>
+</body>
+</html>
